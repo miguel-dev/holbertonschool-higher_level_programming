@@ -2,11 +2,11 @@
 
 
 def max_integer(my_list=[]):
-    max = 0
+    maxx = 0
 
     if not my_list:
         return None
     for i in my_list:
-        if i > max:
-            max = i
-    return max
+        if i > maxx:
+            maxx = i
+    return maxx
