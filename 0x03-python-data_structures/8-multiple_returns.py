@@ -3,7 +3,7 @@
 
 def multiple_returns(sentence):
     if not sentence:
-        return None
+        return 0, None
     elif sentence == "":
         return 0, None
     else:
