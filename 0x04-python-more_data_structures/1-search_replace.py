@@ -5,7 +5,7 @@ def search_replace(my_list, search, replace):
     length = len(my_list)
 
     if not my_list:
-        return None
+        return my_list
 
     new_list = my_list[:]
 
