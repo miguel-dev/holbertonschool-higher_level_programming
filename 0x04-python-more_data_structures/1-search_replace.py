@@ -2,6 +2,10 @@
 
 
 def search_replace(my_list, search, replace):
+
+    if not my_list:
+        return None
+
     new_list = my_list[:]
 
     for i in my_list:
