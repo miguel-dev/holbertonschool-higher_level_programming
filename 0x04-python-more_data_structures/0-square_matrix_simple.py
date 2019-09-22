@@ -7,5 +7,8 @@ def square(x):
 
 def square_matrix_simple(matrix=[]):
     rows = len(matrix)
+    new_matrix = []
 
-    return list(list(map(square, matrix[i])) for i in range(rows))
+    for r in range(rows):
+        new_matrix.append(list(map(square, matrix[r])))
+    return new_matrix
