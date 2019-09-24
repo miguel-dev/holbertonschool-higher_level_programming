@@ -2,4 +2,7 @@
 
 
 def multiply_by_2(a_dictionary):
-    return {k: v*2 for k, v in a_dictionary.items()}
+    new_dictionary = a_dictionary.copy()
+    for k, v in new_dictionary.items():
+        new_dictionary[k] = v*2
+    return new_dictionary
