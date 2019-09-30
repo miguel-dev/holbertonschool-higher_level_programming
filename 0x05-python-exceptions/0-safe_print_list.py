@@ -1,12 +1,12 @@
 def safe_print_list(my_list=[], x=0):
     printed = 0
-    length = len(my_list)
     try:
-        for element in range(1, length):
-            if printed < x:
-                print("{}".format(element), end="")
+        for element in range(0, x):
+            if printed <= x:
+                print("{}".format(my_list[element]), end="")
                 printed = printed + 1
         print()
     except IndexError:
-        print("List is empty.")
+        print()
+        pass
     return printed
