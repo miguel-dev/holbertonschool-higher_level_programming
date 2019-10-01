@@ -8,6 +8,6 @@ def safe_print_integer_err(value):
         print("{:d}".format(value))
         is_integer = True
     except ValueError as error:
-        print("Exception: ", error, file=sys.stderr)
+        print("Exception:", error, file=sys.stderr)
         is_integer = False
     return is_integer
