@@ -7,8 +7,7 @@ def safe_print_integer_err(value):
     try:
         print("{:d}".format(value))
         is_integer = True
-    except ValueError:
-        sys.stderr.write("Exception: Unknown format code 'd' \
-                         for object of type 'str'\n")
+    except ValueError as error:
+        print("Exception: ", error, file=sys.stderr)
         is_integer = False
     return is_integer
