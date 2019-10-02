@@ -10,7 +10,7 @@ class Square:
     def __str__(self):
         s = ""
         if self.__size == 0:
-            s = "\n"
+            s = ""
         else:
             s += "\n" * (self.__position[1])
             for i in range(self.__size):
