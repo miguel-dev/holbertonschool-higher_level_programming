@@ -7,36 +7,42 @@ class Square:
         self.size = size
 
     def __eq__(self, square_2):
+        """Checks if two squares are equal"""
         if self.__size == square_2.size:
             return True
         else:
             return False
 
     def __ne__(self, square_2):
+        """Checks if two squares are not equal"""
         if self.__size != square_2.size:
             return True
         else:
             return False
 
     def __gt__(self, square_2):
+        """Checks if one squares is greater than another"""
         if self.__size > square_2.size:
             return True
         else:
             return False
 
     def __ge__(self, square_2):
+        """Checks if one square is greater of equal to another"""
         if self.__size >= square_2.size:
             return True
         else:
             return False
 
     def __lt__(self, square_2):
+        """Checks if one square is lesser than another"""
         if self.__size < square_2.size:
             return True
         else:
             return False
 
     def __le__(self, square_2):
+        """Checks if one square is less or equal to another"""
         if self.__size <= square_2.size:
             return True
         else:
