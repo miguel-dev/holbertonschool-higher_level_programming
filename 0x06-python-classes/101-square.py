@@ -8,6 +8,7 @@ class Square:
         self.size = size
 
     def __str__(self):
+        """User friendly representation of Square"""
         s = ""
         if self.__size == 0:
             s = ""
