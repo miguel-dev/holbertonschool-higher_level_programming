@@ -1,0 +1,41 @@
+Module 2-matrix_divided to divide a matrix
+==========================================
+
+Using matrix_divided function
+=============================
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+	>>> matrix_divided([[2, 4, 6], [8, 10, 12]], 3)
+	[[0.67, 1.33, 2.0], [2.67, 3.33, 4.0]]
+
+	>>> matrix_divided([[1, 2 ,3, 4], [5, 6, 7, 8]], 3.3)
+	[[0.3, 0.61, 0.91, 1.21], [1.52, 1.82, 2.12, 2.42]]
+
+	>>> matrix_divided([[1.1, 2.2, 3.3, 4.4], [5.5, 6.6, 7.7, 8.8]], 4)
+	[[0.28, 0.55, 0.82, 1.1], [1.38, 1.65, 1.93, 2.2]]
+
+	>>> matrix_divided([["H", 0, 2], [4, 6, 8]], 2)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([[1, 2, 3], [(5, 6), 7, 8]], 5)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([[3, 6, 9, 12], [15, 18, 21]], 7)
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+
+	>>> matrix_divided([[1, 2], [3, 4]], "divisor")
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+	Traceback (most recent call last):
+		...
+	ZeroDivisionError: division by zero
