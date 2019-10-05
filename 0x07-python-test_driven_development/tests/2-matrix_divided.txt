@@ -39,3 +39,16 @@ Using matrix_divided function
 	Traceback (most recent call last):
 		...
 	ZeroDivisionError: division by zero
+
+	>>> matrix_divided([[1, 3, 5, 7], [9, 11, 13, 15]], float('Inf'))
+	[[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]]
+
+	>>> matrix_divided([[1],[2]])
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+	
+	>>> matrix_divided()
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
