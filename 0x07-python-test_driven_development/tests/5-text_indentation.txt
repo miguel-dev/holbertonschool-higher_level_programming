@@ -1,0 +1,16 @@
+The 5-text_indentation module for text indentation
+==================================================
+
+Using text_indentation
+=======================
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+	>>> text_indentation("""U2. Coldplay? Pink Floyd: The Beatles""")
+	U2.
+    	<BLANKLINE>
+    	Coldplay?
+    	<BLANKLINE>
+    	Pink Floyd:
+    	<BLANKLINE>
+    	The Beatles
