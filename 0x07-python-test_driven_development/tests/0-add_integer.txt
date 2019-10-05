@@ -12,9 +12,6 @@ Using the "add_integer" function
 	>>> add_integer(32, 5.7)
 	37
 
-	>>> add_integer(98, -1)
-	97
-
 	>>> add_integer(77)
 	175
 
@@ -32,3 +29,13 @@ Using the "add_integer" function
 	Traceback (most recent call last):
 		...
 	TypeError: a must be an integer
+
+	>>> add_integer(float('NaN'), 100)
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
+
+	>>> add_integer(float('Inf'))
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
