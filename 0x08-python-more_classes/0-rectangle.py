@@ -5,5 +5,5 @@ Module Rectangle
 
 
 class Rectangle:
-    """Representation of a rectangle."""
+    """Definition of a rectangle."""
     pass
