@@ -16,6 +16,8 @@ class Rectangle:
         height = self.__height
         width = self.__width
         string = ""
+        if height == 0 or width == 0:
+            return string
         for i in range(height):
             string += "#" * width
             if i != height - 1:
