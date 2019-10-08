@@ -12,8 +12,17 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Initializes instance variables."""
-        self.__width = width
-        self.__height = height
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        elif not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        elif width < 0:
+            raise ValueError("width must be >= 0")
+        elif height < 0:
+            raise ValueError("height must be >= 0")
+
+        self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     def __del__(self):
@@ -36,6 +45,11 @@ class Rectangle:
     def __repr__(self):
         """Canonical representation of a rectangle"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    @classmethod
+    def square(cls, size=0):
+        square = Rectangle(size, size)
+        return square
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -80,11 +94,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
-
-    @classmethod
-    def square(cls, size=0):
-        square = Rectangle(size, size)
-        return square
 
     def area(self):
         """Returns rectangle area"""
