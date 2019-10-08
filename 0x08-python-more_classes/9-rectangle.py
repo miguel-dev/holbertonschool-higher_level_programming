@@ -37,11 +37,6 @@ class Rectangle:
         """Canonical representation of a rectangle"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
-    @classmethod
-    def square(cls, size=0):
-        square = Rectangle(size, size)
-        return square
-
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if not isinstance(rect_1, Rectangle):
@@ -85,6 +80,11 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
+
+    @classmethod
+    def square(cls, size=0):
+        square = Rectangle(size, size)
+        return square
 
     def area(self):
         """Returns rectangle area"""
