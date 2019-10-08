@@ -8,8 +8,8 @@ class Rectangle:
     """Definition of a rectangle."""
     def __init__(self, width=0, height=0):
         """Initializes instance variables."""
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     def __del__(self):
         """Used when an object Rectangle has been garbage collected."""
