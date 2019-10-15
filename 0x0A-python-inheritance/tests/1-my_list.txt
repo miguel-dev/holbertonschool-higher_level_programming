@@ -1,0 +1,21 @@
+MyList module
+=============
+
+print_sorted
+============
+
+        >>> MyList = __import__('1-my_list').MyList
+
+        >>> MyList.print_sorted([4, 3, 2, 1])
+        [1, 2, 3, 4]
+
+	>>> MyList.print_sorted([-4, -5, -6, -7])
+	[-7, -6, -5, -4]
+
+	>>> MyList.print_sorted([])
+	[]
+
+	>>> MyList.print_sorted()
+	Traceback (most recent call last):
+		...
+    	TypeError: print_sorted() missing 1 required positional argument: 'self'
