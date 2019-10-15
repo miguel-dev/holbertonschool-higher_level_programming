@@ -1,0 +1,24 @@
+Module BaseGeometry
+===================
+
+Testing integer_validator
+=========================
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+	>>> BaseGeometry.integer_validator(BaseGeometry, "age", 36)
+
+	>>> BaseGeometry.integer_validator(BaseGeometry, "year", 0)
+	Traceback (most recent call last):
+		...
+    	ValueError: year must be greater than 0
+
+	>>> BaseGeometry.integer_validator(BaseGeometry, "speed", -1000)
+	Traceback (most recent call last):
+		...
+	ValueError: speed must be greater than 0
+
+	>>> BaseGeometry.integer_validator(BaseGeometry, "infinity", float('Inf'))
+	Traceback (most recent call last):
+		...
+    	TypeError: infinity must be an integer
