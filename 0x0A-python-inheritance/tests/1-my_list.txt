@@ -18,4 +18,15 @@ print_sorted
 	>>> MyList.print_sorted()
 	Traceback (most recent call last):
 		...
-    	TypeError: print_sorted() missing 1 required positional argument: 'self'
+	TypeError: print_sorted() missing 1 required positional argument: 'self'
+
+	>>> MyList()
+	[]
+
+	>>> issubclass(MyList, list)
+	True
+
+	>>> MyList.__str__
+	<slot wrapper '__str__' of 'object' objects>
+
+	>>> MyList().append([1, 2])
