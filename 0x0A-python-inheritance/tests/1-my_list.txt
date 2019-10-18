@@ -23,10 +23,15 @@ print_sorted
 	>>> MyList()
 	[]
 
+	>>> my_list = [1, 2, 3]; my_list2 = MyList.print_sorted(my_list); print(my_list == my_list2)
+	[1, 2, 3]
+	False
+
 	>>> issubclass(MyList, list)
 	True
 
-	>>> MyList.__str__
-	<slot wrapper '__str__' of 'object' objects>
+	>>> print(hasattr(MyList, '__str__'))
+	True
 
-	>>> MyList().append([1, 2])
+	>>> my_list = MyList(); my_list.append("Hola"); print(my_list)
+	['Hola']
