@@ -22,3 +22,26 @@ Testing integer_validator
 	Traceback (most recent call last):
 		...
     	TypeError: infinity must be an integer
+
+	>>> BaseGeometry.integer_validator()
+	Traceback (most recent call last):
+		...
+    	TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
+
+	>>> BaseGeometry.integer_validator("age")
+	Traceback (most recent call last):
+		...
+    	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	>>> BaseGeometry.integer_validator("year", "4")
+	Traceback (most recent call last):
+		...
+    	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+	>>> print(type(BaseGeometry()) == BaseGeometry)
+	True
+
+	>>> BaseGeometry.area(BaseGeometry)
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
