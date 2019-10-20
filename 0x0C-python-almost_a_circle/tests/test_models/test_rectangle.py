@@ -53,5 +53,12 @@ class TestRectangle(unittest.TestCase):
                 output += "\n"
         self.assertEqual(self.rectangle.display(), print(output))
 
+    def test__str__(self):
+        self.assertEqual(print(self.rectangle), print("[Rectangle] ({:d}) {:d}/{:d} = {:d}/{:d}".format(self.rectangle.id, 
+                                                                                                   self.rectangle.x,
+                                                                                                   self.rectangle.y,
+                                                                                                   self.rectangle.width,
+                                                                                                   self.rectangle.height)))
+
 if __name__ == "__main__":
     unittest.main()

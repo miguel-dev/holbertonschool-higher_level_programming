@@ -78,3 +78,11 @@ class Rectangle(Base):
         """Prints the instance to stdout with #"""
         for cell in range(self.height):
             print("#" * self.width)
+
+    def __str__(self):
+        """User friendly representation of class Rectangle"""
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
+                                                                 self.x,
+                                                                 self.y,
+                                                                 self.width,
+                                                                 self.height)
