@@ -76,8 +76,10 @@ class Rectangle(Base):
 
     def display(self):
         """Prints the instance to stdout with #"""
-        for cell in range(self.height):
-            print("#" * self.width)
+        print("\n" * self.y, end="")
+        for row in range(self.height):
+                print(" " * self.x, end="")
+                print("#" * self.width)
 
     def __str__(self):
         """User friendly representation of class Rectangle"""
