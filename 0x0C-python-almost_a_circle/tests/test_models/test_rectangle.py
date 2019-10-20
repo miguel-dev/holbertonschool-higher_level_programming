@@ -45,5 +45,13 @@ class TestRectangle(unittest.TestCase):
     def test_area(self):
         self.assertEqual(self.rectangle.area(), 6)
 
+    def test_display(self):
+        output = ""
+        for row in range(self.rectangle.height):    
+            output += "#" * self.rectangle.width
+            if row != self.rectangle.height - 1:
+                output += "\n"
+        self.assertEqual(self.rectangle.display(), print(output))
+
 if __name__ == "__main__":
     unittest.main()
