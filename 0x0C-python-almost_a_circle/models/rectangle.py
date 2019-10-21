@@ -70,6 +70,14 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
+    def __str__(self):
+        """User friendly representation of class Rectangle"""
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
+                                                                 self.x,
+                                                                 self.y,
+                                                                 self.width,
+                                                                 self.height)
+
     def area(self):
         """Calculates the area of the Rectangle"""
         return self.width * self.height
@@ -81,10 +89,10 @@ class Rectangle(Base):
                 print(" " * self.x, end="")
                 print("#" * self.width)
 
-    def __str__(self):
-        """User friendly representation of class Rectangle"""
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.id,
-                                                                 self.x,
-                                                                 self.y,
-                                                                 self.width,
-                                                                 self.height)
+    def update(self, *args):
+        """Updates the class Rectangle for each attribute"""
+        number_args = 0
+        name_args = ["id", "width", "height", "x", "y"]
+        for arg in args:
+            setattr(self, name_args[number_args], arg)
+            number_args += 1
