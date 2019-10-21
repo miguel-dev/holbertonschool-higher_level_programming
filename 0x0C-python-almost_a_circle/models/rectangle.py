@@ -93,19 +93,10 @@ class Rectangle(Base):
         """Updates the class Rectangle for each attribute"""
         number_args = 0
         name_args = ["id", "width", "height", "x", "y"]
-        if args or args == []:
+        if args and args != []:
             for arg in args:
                 setattr(self, name_args[number_args], arg)
                 number_args += 1
         else:
             for k, v in kwargs.items():
-                if k == "id":
-                    self.id = v
-                elif k == "width":
-                    self.width = v
-                elif k == "height":
-                    self.height = v
-                elif k == "x":
-                    self.x = v
-                elif k == "y":
-                    self.y = v
+                setattr(self, k, v)

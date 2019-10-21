@@ -28,3 +28,18 @@ class Square(Rectangle):
         """User friendly representation of a Square"""
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
                 self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        arg_number = 0
+        args_names = ["id", "size", "x", "y"]
+        if args and args != []:
+            for arg in args:
+                setattr(self, args_names[arg_number], arg)
+                arg_number += 1
+        else:
+            for k, v in kwargs.items():
+                if k == "size":
+                    self.width = v
+                    self.height = v
+                else:
+                    setattr(self, k, v)
