@@ -25,4 +25,18 @@ class TestSquare(unittest.TestCase):
 
     def test_size_setter(self):
         self.square.size = 4
-        self.assertEqual(self.square.size, 4) 
+        self.assertEqual(self.square.size, 4)
+
+    def test_args(self):
+        self.square.update(1, 2, 3, 4, id=2, size=3, x=4, y=5)
+        self.assertEqual(self.square.id, 1)
+        self.assertEqual(self.square.size, 2)
+        self.assertEqual(self.square.x, 3)
+        self.assertEqual(self.square.y, 4)
+
+    def test_update_kwargs(self):
+        self.square.update(id=2, size=3, x=4, y=5)
+        self.assertEqual(self.square.id, 2)
+        self.assertEqual(self.square.size, 3)
+        self.assertEqual(self.square.x, 4)
+        self.assertEqual(self.square.x, 4)
