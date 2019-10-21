@@ -1,4 +1,6 @@
 import unittest
+import io
+import sys
 from models.rectangle import Base
 from models.rectangle import Rectangle
 
@@ -46,22 +48,30 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rectangle.area(), 6)
 
     def test_display(self):
-        output = ""
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        self.rectangle.display()
+        sys.stdout = sys.__stdout__
+        output = "\n" * self.rectangle.y
         for row in range(self.rectangle.height):    
+            output += " " * self.rectangle.x
             output += "#" * self.rectangle.width
-            if row != self.rectangle.height - 1:
-                output += "\n"
-        self.assertEqual(self.rectangle.display(), print(output))
+            output += "\n"
+        self.assertEqual(captured_output.getvalue(), output)
 
     def test__str__(self):
-        self.assertEqual(print(self.rectangle), print("[Rectangle] ({:d}) {:d}/{:d} = {:d}/{:d}".format(self.rectangle.id, 
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        print(self.rectangle)
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}\n".format(self.rectangle.id, 
                                                                                                    self.rectangle.x,
                                                                                                    self.rectangle.y,
                                                                                                    self.rectangle.width,
-                                                                                                   self.rectangle.height)))
+                                                                                                   self.rectangle.height))
 
     def test_update_args(self):
-        self.rectangle.update(1, 2, 3, 4, 5)
+        self.rectangle.update(1, 2, 3, 4, 5, id=1, width=2, height=3, x=4, y=5)
         self.assertEqual(self.rectangle.id, 1)
         self.assertEqual(self.rectangle.width, 2)
         self.assertEqual(self.rectangle.height, 3)
