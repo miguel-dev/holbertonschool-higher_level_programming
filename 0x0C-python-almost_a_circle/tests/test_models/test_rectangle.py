@@ -60,8 +60,16 @@ class TestRectangle(unittest.TestCase):
                                                                                                    self.rectangle.width,
                                                                                                    self.rectangle.height)))
 
-    def test_update(self):
+    def test_update_args(self):
         self.rectangle.update(1, 2, 3, 4, 5)
+        self.assertEqual(self.rectangle.id, 1)
+        self.assertEqual(self.rectangle.width, 2)
+        self.assertEqual(self.rectangle.height, 3)
+        self.assertEqual(self.rectangle.x, 4)
+        self.assertEqual(self.rectangle.y, 5)
+
+    def test_update_kwargs(self):
+        self.rectangle.update(id=1, width=2, height=3, x=4, y=5)
         self.assertEqual(self.rectangle.id, 1)
         self.assertEqual(self.rectangle.width, 2)
         self.assertEqual(self.rectangle.height, 3)
