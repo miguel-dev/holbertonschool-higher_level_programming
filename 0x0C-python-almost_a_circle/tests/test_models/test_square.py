@@ -22,3 +22,7 @@ class TestSquare(unittest.TestCase):
         print(self.square)
         sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue(), "[Square] ({:d}) {:d}/{:d} - {:d}\n".format(self.square.id, self.square.x, self.square.y, self.square.width))
+
+    def test_size_setter(self):
+        self.square.size = 4
+        self.assertEqual(self.square.size, 4) 
