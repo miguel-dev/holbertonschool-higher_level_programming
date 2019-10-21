@@ -40,3 +40,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.square.size, 3)
         self.assertEqual(self.square.x, 4)
         self.assertEqual(self.square.x, 4)
+
+    def test_to_dictionary(self):
+        dictionary = {'id': self.square.id, 'size': self.square.size, 'x': self.square.x, 'y': self.square.y}
+        self.assertEqual(self.square.to_dictionary(), dictionary)
