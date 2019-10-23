@@ -29,6 +29,7 @@ class Base:
         with open(file_name, "w") as file:
             if list_objs is None:
                 file.write("[]")
+                return
             file.write("[")
             for obj in range(len(list_objs)):
                 dictionary = list_objs[obj].to_dictionary()
