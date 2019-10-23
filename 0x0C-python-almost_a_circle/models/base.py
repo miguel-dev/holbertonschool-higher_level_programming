@@ -33,6 +33,18 @@ class Base:
                     file.write(", ")
             file.write("]")
 
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with attributes set to values in dictionary"""
+        if cls.__name__ == "Rectangle":
+            r = cls(2, 3)
+            r.update(**dictionary)
+            return r
+        else:
+            s = cls(4)
+            s.update(**dictionary)
+            return s
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the JSON representation of a list of dictionaries"""
