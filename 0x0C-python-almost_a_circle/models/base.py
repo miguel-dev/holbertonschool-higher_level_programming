@@ -29,7 +29,9 @@ class Base:
         with open(file_name, "w") as file:
             if list_objs is None:
                 file.write([])
+            file.write("[")
             for obj in list_objs:
                 dictionary = obj.to_dictionary()
                 json_string = cls.to_json_string(dictionary)
-                file.write("[" + json_string + "]")
+                file.write(json_string)
+            file.write("]")
