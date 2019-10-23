@@ -45,6 +45,22 @@ class Base:
             s.update(**dictionary)
             return s
 
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        file_name = cls.__name__ + ".json"
+        try:
+            with open(file_name, "r") as file:
+                line = file.readline()
+            list_dict = cls.from_json_string(line)
+            list_objects = []
+            for d in list_dict:
+                instance = cls.create(**d)
+                list_objects.append(instance)
+            return list_objects
+        except FileNotFoundError:
+            return []
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the JSON representation of a list of dictionaries"""
