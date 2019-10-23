@@ -28,10 +28,12 @@ class Base:
         file_name = cls.__name__ + ".json"
         with open(file_name, "w") as file:
             if list_objs is None:
-                file.write([])
+                file.write("[]")
             file.write("[")
-            for obj in list_objs:
-                dictionary = obj.to_dictionary()
+            for obj in range(len(list_objs)):
+                dictionary = list_objs[obj].to_dictionary()
                 json_string = cls.to_json_string(dictionary)
                 file.write(json_string)
+                if obj != len(list_objs) - 1:
+                    file.write(", ")
             file.write("]")
