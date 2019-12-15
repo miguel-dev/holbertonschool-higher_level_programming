@@ -9,7 +9,7 @@ if __name__ == '__main__':
                          passwd=sys.argv[2],
                          db=sys.argv[3])
     cu = db.cursor()
-    cu.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id;")
+    cu.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id;")
     query_rows = cu.fetchall()
     for row in query_rows:
         print(row)
