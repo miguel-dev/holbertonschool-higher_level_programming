@@ -12,3 +12,6 @@ for row in query_rows:
     print(row)
 cu.close()
 db.close()
+
+if __name__ == '__main__':
+    main()
