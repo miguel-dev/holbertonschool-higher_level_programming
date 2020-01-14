@@ -4,7 +4,8 @@ import requests
 import sys
 r = requests.get(sys.argv[1])
 sc = r.status_code
-if (sc >= 400):
-    print("Error code: {}".format(sc))
-else:
+try:
+    r.raise_for_status()
     print(r.text)
+except:
+    print("Error code: {}".format(r.status_code))
