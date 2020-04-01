@@ -16,7 +16,8 @@ if __name__ == "__main__":
                  ORDER BY id ASC'''.format(sys.argv[4])
     cur.execute(sql_query)
     result = cur.fetchall()
-    for entry in result:
-        print(entry)
+    if result:
+        for entry in result:
+            print(entry)
     cur.close()
     db.close()
