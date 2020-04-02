@@ -13,6 +13,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     sql_query = '''SELECT * FROM states
                  WHERE name = "{:s}"
+                 COLLATE latin1_general_cs
                  ORDER BY id ASC'''.format(sys.argv[4])
     cur.execute(sql_query)
     result = cur.fetchall()
