@@ -12,8 +12,8 @@ if __name__ == "__main__":
     if len(sys.argv) >= 2:
         letter = sys.argv[1]
 
-    url = "http://0.0.0.0:5000/search_user"
-    r = requests.post(url, data={"q": letter})
+    r = requests.post("http://0.0.0.0:5000/search_user", data={"q": letter})
+
     try:
         j = r.json()
         if j == {}:
