@@ -19,5 +19,5 @@ if __name__ == "__main__":
         if (dict_commit):
             dict_author = dict_commit.get("author")
         if (dict_author):
-            dict_name = dict_author.get("name")
-        print("{}: {}".format(list_res[i].get("sha"), dict_name))
+            name = dict_author.get("name")
+        print("{}: {}".format(list_res[i].get("sha"), name))
