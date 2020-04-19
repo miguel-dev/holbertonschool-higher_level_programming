@@ -9,7 +9,12 @@ if __name__ == "__main__":
                                                               sys.argv[1])
     r = requests.get(url)
     list_res = r.json()
+    dict_sha = {}
+    dict_name = {}
     for i in range(10):
-        print("{}: {}".format(list_res[i].get("sha"),
-                              list_res[i].get("commit")
-                                         .get("author").get("name")))
+        dict_name = list_res[i].get("commit")
+        if (dict_name):
+            dict_name = dict_name.get("author")
+        if (dict_name):
+            dict_name = dict_name.get("name")
+        print("{}: {}".format(list_res[i].get("sha"), dict_name))
