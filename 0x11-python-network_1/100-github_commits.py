@@ -11,4 +11,5 @@ if __name__ == "__main__":
     list_res = r.json()
     for i in range(10):
         print("{}: {}".format(list_res[i].get("sha"),
-                              list_res[i].get("author").get("name")))
+                              list_res[i].get("commit")
+                                         .get("author").get("name")))
