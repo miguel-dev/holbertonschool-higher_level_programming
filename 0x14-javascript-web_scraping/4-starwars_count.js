@@ -10,6 +10,9 @@ request(url, function (error, response, body) {
     let num = 0;
     for (const film of films) {
       const characters = film.characters;
+      if (!characters) {
+        continue;
+      }
       for (const character of characters) {
         if (character === 'https://swapi-api.hbtn.io/api/people/18/') {
           num++;
