@@ -5,14 +5,13 @@ request(process.argv[2], function (error, response, body) {
     console.error(error);
   } else {
     const tasks = JSON.parse(body);
-    const ctasks = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0 };
+    const ctasks = {};
 
     for (const task of tasks) {
-      for (let i = 0; i < 10; i++) {
-        if (task.userId === i + 1 && task.completed) {
-          const id = i + 1;
-          ctasks[id.toString()]++;
-        }
+      if (task.completed && !ctasks[task.userId]) {
+        ctasks[task.userId] = 1;
+      } else if (task.completed) {
+        ctasks[task.userId]++;
       }
     }
     console.log(ctasks);
