@@ -7,12 +7,12 @@ request(url, function (error, response, body) {
     console.error(error);
   } else {
     const films = JSON.parse(body).results;
+    if (!films) {
+      return 0;
+    }
     let num = 0;
     for (const film of films) {
       const characters = film.characters;
-      if (!characters) {
-        continue;
-      }
       for (const character of characters) {
         if (character === 'https://swapi-api.hbtn.io/api/people/18/') {
           num++;
