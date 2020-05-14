@@ -6,10 +6,10 @@ request(url, function (error, response, body) {
   if (error) {
     console.error(error);
   } else {
-    const films = JSON.parse(body).results;
-    if (!films) {
+    if (!body) {
       return 0;
     }
+    const films = JSON.parse(body).results;
     let num = 0;
     for (const film of films) {
       const characters = film.characters;
